@@ -1,0 +1,9 @@
+/home/ruslan/source/library-test-task/library-test-task.Data/bin/Debug/netstandard2.1/library-test-task.Data.deps.json
+/home/ruslan/source/library-test-task/library-test-task.Data/bin/Debug/netstandard2.1/library-test-task.Data.dll
+/home/ruslan/source/library-test-task/library-test-task.Data/bin/Debug/netstandard2.1/library-test-task.Data.pdb
+/home/ruslan/source/library-test-task/library-test-task.Data/obj/Debug/netstandard2.1/library-test-task.Data.csprojAssemblyReference.cache
+/home/ruslan/source/library-test-task/library-test-task.Data/obj/Debug/netstandard2.1/library-test-task.Data.AssemblyInfoInputs.cache
+/home/ruslan/source/library-test-task/library-test-task.Data/obj/Debug/netstandard2.1/library-test-task.Data.AssemblyInfo.cs
+/home/ruslan/source/library-test-task/library-test-task.Data/obj/Debug/netstandard2.1/library-test-task.Data.csproj.CoreCompileInputs.cache
+/home/ruslan/source/library-test-task/library-test-task.Data/obj/Debug/netstandard2.1/library-test-task.Data.dll
+/home/ruslan/source/library-test-task/library-test-task.Data/obj/Debug/netstandard2.1/library-test-task.Data.pdb

@@ -1,0 +1,31 @@
+<h1 id="tableLabel">Книги</h1>
+
+<p>Справочник книг библиотеки.</p>
+
+<p *ngIf="!books"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="books">
+  <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>Название</th>
+      <th>Автор</th>
+      <th>Год публикации</th>
+      <th>Всего</th>
+      <th>Свободно</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.publishYear }}</td>
+      <td>{{ book.total }}</td>
+      <td>{{ book.free }}</td>
+      <td><button (click)='delete(book.id)' class="btn btn-danger">Удалить</button></td>
+    </tr>
+  </tbody>
+  <button (click)='openForm()' class="btn btn-success">Добавить книгу</button>
+</table>

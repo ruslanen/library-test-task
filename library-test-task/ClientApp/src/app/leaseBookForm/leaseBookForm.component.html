@@ -1,0 +1,30 @@
+<h3>Фиксация аренды книги</h3>
+
+<p>
+  <a routerLink="/">Назад</a>
+</p>
+
+<form [formGroup]="leaseBookForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="customer">Клиент</label>
+    <select [(ngModel)]="customerId" id="customer" formControlName="customerId" class="input-group-text">
+      <option *ngFor="let customer of customers" [ngValue]="customer.id">
+        {{customer.lastName + ' ' + customer.firstName + ' ' + customer.patronymic}}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="book">Книга</label>
+    <select [(ngModel)]="bookId" id="book" formControlName="bookId" class="input-group-text">
+      <option *ngFor="let book of books" [ngValue]="book.id">
+        {{book.title + ' ' + book.author}}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="planEndDate">Плановая дата возврата</label>
+    <input id="planEndDate" type="date" formControlName="planEndDate" class="input-group-text">
+  </div>
+
+  <button type="submit" class="btn btn-success">Зафиксировать аренду</button>
+</form>

@@ -1,0 +1,61 @@
+<h1 id="tableLabel">Аренда книг</h1>
+
+<p>Детализация аренды книг.</p>
+
+<p *ngIf="!bookRent"><em>Loading...</em></p>
+
+<form [formGroup]="bookRentFilterForm" (ngSubmit)="onFilterSubmit()">
+  <h2>Фильтр</h2>
+  <div class="form-group">
+  <div>
+    <label for="nameFilter">ФИО</label>
+    <input id="nameFilter" type="text" formControlName="nameFilter" class="input-group-text">
+  </div>
+  <div>
+    <label for="bookFilter">Книга</label>
+    <input id="bookFilter" type="text" formControlName="bookFilter" class="input-group-text">
+  </div>
+  <div>
+    <label for="rentStatusFilter">Статус аренды</label>
+    <select id="rentStatusFilter" formControlName="rentStatusFilter" class="browser-default custom-select">
+      <option selected value="0">
+        Все записи
+      </option>
+      <option value="1">
+        В аренде на текущий момент
+      </option>
+      <option value="2">
+        Аренда просрочена
+      </option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Применить фильтр</button>
+  <button type="reset" (click)='resetFilter()' class="btn btn-secondary">Сбросить фильтр</button>
+  </div>
+</form>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="bookRent">
+  <thead>
+  <tr>
+    <th>ФИО клиента</th>
+    <th>Книга</th>
+    <th>Дата начала аренды</th>
+    <th>Плановая дата окончания аренды</th>
+    <th>Фактическая дата окончания аренды</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let r of bookRent">
+    <td>{{ r.customer.lastName + ' ' + r.customer.firstName + ' ' + r.customer.patronymic }}</td>
+    <td>{{ r.book.title + ' - ' + r.book.author }}</td>
+    <td>{{ r.startRent }}</td>
+    <td>{{ r.planEndRent }}</td>
+    <td>{{ r.factEndRent }}</td>
+    <td>
+      <button *ngIf="!r.factEndRent" (click)='releaseBook(r.id)' class="btn btn-info">Зафиксировать возврат</button>
+    </td>
+  </tr>
+  </tbody>
+  <button (click)='openLeaseBookForm()' class="btn btn-success">Зафиксировать аренду книги</button>
+</table>

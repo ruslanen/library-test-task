@@ -1,0 +1,45 @@
+<h3>Новая книга</h3>
+
+<p>
+  <a routerLink="/books">Назад</a>
+</p>
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="isbn">ISBN</label>
+    <input id="isbn" type="number" formControlName="isbn" class="input-group-text">
+    <div *ngIf="bookForm.get('isbn').invalid && (bookForm.get('isbn').touched || bookForm.get('isbn').dirty)">
+      <span *ngIf="bookForm.get('isbn').errors?.required">Field is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="title">Название</label>
+    <input id="title" type="text" formControlName="title" class="input-group-text">
+    <div *ngIf="bookForm.get('title').invalid && (bookForm.get('title').touched || bookForm.get('title').dirty)">
+      <span *ngIf="bookForm.get('title').errors?.required">Field is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="author">Автор</label>
+    <input id="author" type="text" formControlName="author" class="input-group-text">
+    <div *ngIf="bookForm.get('author').invalid && (bookForm.get('author').touched || bookForm.get('author').dirty)">
+      <span *ngIf="bookForm.get('author').errors?.required">Field is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="publishYear">Год публикации</label>
+    <input id="publishYear" type="number" formControlName="publishYear" class="input-group-text">
+    <div *ngIf="bookForm.get('publishYear').invalid && (bookForm.get('publishYear').touched || bookForm.get('publishYear').dirty)">
+      <span *ngIf="bookForm.get('publishYear').errors?.required">Field is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="total">Всего экземпляров</label>
+    <input id="total" type="number" formControlName="total" class="input-group-text">
+    <div *ngIf="bookForm.get('total').invalid && (bookForm.get('total').touched || bookForm.get('total').dirty)">
+      <span *ngIf="bookForm.get('total').errors?.required">Field is required</span>
+    </div>
+  </div>
+
+  <button class="btn btn-success" type="submit" >Добавить</button>
+</form>

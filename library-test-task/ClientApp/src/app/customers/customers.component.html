@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Клиенты</h1>
+
+<p>Справочник клиентов библиотеки.</p>
+
+<p *ngIf="!customers"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="customers">
+  <thead>
+    <tr>
+      <th>Фамилия</th>
+      <th>Имя</th>
+      <th>Отчество</th>
+      <th>Дата рождения</th>
+      <th>Адрес</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.lastName }}</td>
+      <td>{{ customer.firstName }}</td>
+      <td>{{ customer.patronymic }}</td>
+      <td>{{ customer.birthDate }}</td>
+      <td>{{ customer.address }}</td>
+      <td><button (click)='delete(customer.id)' class="btn btn-danger">Удалить</button></td>
+    </tr>
+  </tbody>
+  <button (click)='openForm()' class="btn btn-success">Добавить клиента</button>
+</table>
