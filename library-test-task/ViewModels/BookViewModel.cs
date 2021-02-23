@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using library_test_task.Data.Models;
 
 namespace library_test_task.ViewModels
@@ -7,14 +8,20 @@ namespace library_test_task.ViewModels
     /// </summary>
     public class BookViewModel
     {
+        [Required]
+        [RegularExpression("^[0-9]{13}$")]
         public long Isbn { get; set; }
 
+        [Required]
         public string Title { get; set; }
 
+        [Required]
         public string Author { get; set; }
 
+        [Required]
         public int PublishYear { get; set; }
         
+        [Required]
         public int Total { get; set; }
 
         public Book ToBook() => new Book

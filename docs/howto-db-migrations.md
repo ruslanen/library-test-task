@@ -1,4 +1,4 @@
-###Первичный запуск средства миграций в Entity Framework.
+### Первичный запуск средства миграций в Entity Framework.
 1. Установить терминальный инструмент работы с Entity Framework:
 ```
 dotnet tool install --global dotnet-ef
@@ -13,7 +13,7 @@ dotnet ef migrations add Initial --startup-project=../library-test-task
 dotnet ef database update --context ApplicationContext --startup-project=../library-test-task
 ```
 
-###Пересоздание базы данных.
+### Пересоздание базы данных.
 Для пересоздания базы данных использовать команды:
 ```
 dotnet ef database drop --force --context ApplicationContext --startup-project=../library-test-task

@@ -20,6 +20,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
         <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="5.1.16" />
     </ItemGroup>
 
@@ -32,6 +33,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\library-test-task.Data\library-test-task.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Logging" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

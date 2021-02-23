@@ -5,8 +5,17 @@ using System.Linq.Expressions;
 
 namespace library_test_task
 {
+    /// <summary>
+    /// Методы расширения для IEnumerable&lt;Expression&lt;Func&lt;T, bool&gt;&gt;&gt;
+    /// </summary>
     public static class FilterExpressionExtensions
     {
+        /// <summary>
+        /// Составить выражение для предиката Where из одного и более условий
+        /// https://stackoverflow.com/questions/4429956/iqueryablet-where-suitable-expression-in-where
+        /// </summary>
+        /// <param name="filters">Последовательность фильтров</param>
+        /// <returns>Выражение фильтрации</returns>
         public static Expression<Func<T, bool>> OrTheseFiltersTogether<T>( 
             this IEnumerable<Expression<Func<T, bool>>> filters) 
         { 

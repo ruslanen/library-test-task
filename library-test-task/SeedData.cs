@@ -8,14 +8,14 @@ using Microsoft.Extensions.DependencyInjection;
 namespace library_test_task
 {
     /// <summary>
-    /// Заполняет базу данных тестовыми данными
+    /// Заполнитель базы данных тестовыми данными
     /// </summary>
     public static class SeedData
     {
         /// <summary>
-        /// Заполнить таблицы <see cref="Book"/> и <see cref="Customer"/>
+        /// Заполнить таблицы <see cref="Book"/>, <see cref="Customer"/> и <see cref="BookStorage"/> данными
         /// </summary>
-        /// <param name="applicationBuilder"></param>
+        /// <param name="applicationBuilder">Объект конфигурирования pipiline приложения</param>
         public static void EnsurePopulated(IApplicationBuilder applicationBuilder)
         {
             DbContext context = applicationBuilder.ApplicationServices
